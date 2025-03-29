@@ -20,16 +20,16 @@ const main = async () => {
 
     client.on(Events.MessageCreate, async (message) => {
         if (message.author.id === process.env.APP_ID) { return }
-        if (await danishMachine.isLanguage(message.content)) { 
-            console.log(message.content)
-            return 
-        }
-        message.reply("Kun dansk for helvede")
+        if (message.channel.name !== 'general') { return }
+        if (await danishMachine.isLanguage(message.content)) { return }
+        message.reply("Kun dansk FOR HELVEDE")
     })
 
     // console.log(process.env.DISCORD_TOKEN)
     await client.login(process.env.DISCORD_TOKEN)
 }
+
+main()
 
 
 export default main
