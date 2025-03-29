@@ -1,5 +1,8 @@
 {
-   "name": "discord-lang-bot",
-   "compatibility_date": "2025-03-29",
-   "main": "src/index.js"
+    "name": "discord-lang-bot",
+    "compatibility_date": "2025-03-29",
+    "main": "src/index.js",
+    "compatibility_flags": [
+        "nodejs_compat"
+    ],
 }
