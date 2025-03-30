@@ -12,12 +12,16 @@ class languageMachine {
     }
 
     async isLanguage(message) {
-        const res = await this.#detector.detect(message)
-        console.log(res[0])
-        if (!res[0].isReliable) {
+        try {
+            const res = await this.#detector.detect(message)
+            console.log(res[0])
+            if (!res[0].isReliable) {
+                return true
+            }
+            return res[0].language === this.#langCode
+        } catch {
             return true
         }
-        return res[0].language === this.#langCode
     }
 }
 
